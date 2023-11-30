@@ -1,2 +1,2 @@
-web: gunicorn LastCall-Heroku-BackEnd.wsgi
+web: gunicorn app.wsgi
 
