@@ -17,7 +17,7 @@ from .validation import custom_validation, validate_email, validate_password
 
 ######### Home View #########
 def home(request):
-    return render(request, '')
+    return render(request, 'home.html')
 
 ######### User Views #########
 class UserRegister(APIView):
