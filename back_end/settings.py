@@ -65,11 +65,11 @@ STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://lc-frontend-50a314ca30f5.herokuapp.com/",
+    "https://lc-frontend-50a314ca30f5.herokuapp.com",
 ]
 CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOWED_ORIGINS = [
-    "https://lc-frontend-50a314ca30f5.herokuapp.com/",
+    "https://lc-frontend-50a314ca30f5.herokuapp.com",
 ]
 CORS_ALLOW_CREDENTIALS = True
 
