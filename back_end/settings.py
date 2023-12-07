@@ -65,7 +65,8 @@ CSRF_TRUSTED_ORIGINS = [
     "http://13.49.18.120:3000/",
 ]
 # Set SameSite=None for cross-site requests
-SESSION_COOKIE_SAMESITE = None
+CSRF_COOKIE_SAMESITE = 'None' 
+SESSION_COOKIE_SAMESITE = 'None' 
 # Optionally, you might want to set Secure to ensure the cookie is sent only over HTTPS
 # SESSION_COOKIE_SECURE = True
 
