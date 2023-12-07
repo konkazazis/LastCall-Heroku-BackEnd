@@ -60,11 +60,15 @@ MIDDLEWARE = [
 ]
 
 STATIC_URL = '/static/'
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 CSRF_TRUSTED_ORIGINS = [
     "http://13.49.18.120:3000/",
 ]
+# Set SameSite=None for cross-site requests
+SESSION_COOKIE_SAMESITE = None
+# Optionally, you might want to set Secure to ensure the cookie is sent only over HTTPS
+# SESSION_COOKIE_SECURE = True
+
 CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOWED_ORIGINS = [
     "http://13.49.18.120:3000",
