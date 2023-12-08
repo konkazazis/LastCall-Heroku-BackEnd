@@ -65,6 +65,7 @@ STATIC_URL = '/static/'
 CSRF_TRUSTED_ORIGINS = [
     "https://lc-frontend-d59c14215cd2.herokuapp.com",
 ]
+
 # Set SameSite=None for cross-site requests
 CSRF_COOKIE_SAMESITE = 'None' 
 SESSION_COOKIE_SAMESITE = 'None' 
@@ -75,6 +76,7 @@ SESSION_COOKIE_SAMESITE = 'None'
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 SECURE_SSL_REDIRECT = True
 
+CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOWED_ORIGINS = [
     "https://lc-frontend-d59c14215cd2.herokuapp.com",
