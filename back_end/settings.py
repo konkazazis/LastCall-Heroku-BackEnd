@@ -62,14 +62,14 @@ MIDDLEWARE = [
 STATIC_URL = '/static/'
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://lc-frontend-d59c14215cd2.herokuapp.com/",
+    "https://lc-frontend-d59c14215cd2.herokuapp.com",
 ]
 # Set SameSite=None for cross-site requests
 CSRF_COOKIE_SAMESITE = 'None' 
 SESSION_COOKIE_SAMESITE = 'None' 
 # Optionally, you might want to set Secure to ensure the cookie is sent only over HTTPS
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
+# SESSION_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
 
 CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOWED_ORIGINS = [
