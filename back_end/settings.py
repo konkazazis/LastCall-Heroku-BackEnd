@@ -62,7 +62,7 @@ MIDDLEWARE = [
 STATIC_URL = '/static/'
 
 CSRF_TRUSTED_ORIGINS = [
-    "http://13.49.18.120:3000/",
+    "https://lc-frontend-d59c14215cd2.herokuapp.com/",
 ]
 # Set SameSite=None for cross-site requests
 CSRF_COOKIE_SAMESITE = 'None' 
@@ -73,7 +73,7 @@ CSRF_COOKIE_SECURE = True
 
 CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOWED_ORIGINS = [
-    "http://13.49.18.120:3000",
+    "https://lc-frontend-d59c14215cd2.herokuapp.com",
 ]
 CORS_ALLOW_CREDENTIALS = True
 
