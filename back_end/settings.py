@@ -13,7 +13,9 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import dj_database_url
 import os
+from dotenv import load_dotenv
 
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,15 +27,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG')
 
 ALLOWED_HOSTS = ["*"]
 
-
 # Application definition
-
-
-
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -44,8 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'app',
-    
+    'app', 
 ]
 
 MIDDLEWARE = [
@@ -63,25 +60,25 @@ MIDDLEWARE = [
 STATIC_URL = '/static/'
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://lc-frontend-d59c14215cd2.herokuapp.com",
+    os.environ.get('API_URL'),
 ]
 
 # Set SameSite=None for cross-site requests
 CSRF_COOKIE_SAMESITE = 'None' 
 SESSION_COOKIE_SAMESITE = 'None' 
 # Optionally, you might want to set Secure to ensure the cookie is sent only over HTTPS
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = os.environ.get('SESSION_COOKIE_SECURE')
+CSRF_COOKIE_SECURE = os.environ.get('CSRF_COOKIE_SECURE')
 
+# Best solution I have found for running locally is to comment out the following lines 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 SECURE_SSL_REDIRECT = True
 
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOWED_ORIGINS = [
-    "https://lc-frontend-d59c14215cd2.herokuapp.com",
+    os.environ.get('API_URL'),
 ]
-CORS_ALLOW_CREDENTIALS = True
 
 AUTH_USER_MODEL = 'app.AppUser'
 
@@ -93,7 +90,6 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
     ),
 }
-
 
 ROOT_URLCONF = 'back_end.urls'
 
@@ -119,6 +115,7 @@ WSGI_APPLICATION = 'back_end.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# Comment out the live postgre db lines to run locally (run sqllite3 instead)
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
