@@ -85,7 +85,7 @@ class ExpenseCreateView(generics.CreateAPIView):
 	queryset = Expense.objects.all()
 	serializer_class = ExpenseSerializer
 	permission_classes = [permissions.IsAuthenticated]
-	authentication_classes = [SessionAuthentication]
+	authentication_classes = (SessionAuthentication,)
 
 	def perform_create(self, serializer):
 		serializer.save(user=self.request.user)
