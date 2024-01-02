@@ -82,12 +82,13 @@ class ExpenseDeleteView(generics.DestroyAPIView):
     authentication_classes = [SessionAuthentication]  # Include Session Authentication 
 
 class ExpenseCreateView(generics.CreateAPIView):
-    queryset = Expense.objects.all()
-    serializer_class = ExpenseSerializer
-    permission_classes = [permissions.IsAuthenticated]
+	queryset = Expense.objects.all()
+	serializer_class = ExpenseSerializer
+	permission_classes = [permissions.IsAuthenticated]
+	authentication_classes = [SessionAuthentication]
 
-    def perform_create(self, serializer):
-        serializer.save(user=self.request.user)
+	def perform_create(self, serializer):
+		serializer.save(user=self.request.user)
 ################
 
 class UserProfileUpdate(UpdateAPIView):
