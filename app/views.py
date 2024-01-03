@@ -6,9 +6,6 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 
-from django.utils.decorators import method_decorator
-from django.views.decorators.csrf import csrf_exempt
-
 from django.shortcuts import render
 from django.contrib.auth import  login, logout
 
@@ -83,7 +80,6 @@ class ExpenseDeleteView(generics.DestroyAPIView):
     permission_classes = [IsAuthenticated]
     authentication_classes = [SessionAuthentication]  # Include Session Authentication 
 
-@method_decorator(csrf_exempt, name='dispatch')
 class ExpenseCreateView(generics.CreateAPIView):
 	queryset = Expense.objects.all()
 	serializer_class = ExpenseSerializer

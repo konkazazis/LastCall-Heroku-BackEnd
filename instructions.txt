@@ -1,0 +1,12 @@
+Back End :
+
+1. Install python latest version
+2. Create a python virtual environment
+3. install requirements
+    pip install -r rquirements.txt
+4. Comment out the lines specified in settings.py
+5. make migrations and migrate 
+6. Create .env file and set local variables
+    cookies,API_URL,SECRET_KEY
+7. activate virtual environment (Activate.ps1)
+8. run : python manage.py runserver
