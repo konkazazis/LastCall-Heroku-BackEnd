@@ -68,6 +68,7 @@ CSRF_COOKIE_SAMESITE = 'None'
 SESSION_COOKIE_SAMESITE = 'None' 
 # Optionally, you might want to set Secure to ensure the cookie is sent only over HTTPS
 SESSION_COOKIE_SECURE = os.environ.get('SESSION_COOKIE_SECURE')
+SESSION_COOKIE_DOMAIN = os.environ.get('API_URL')
 CSRF_COOKIE_SECURE = os.environ.get('CSRF_COOKIE_SECURE')
 
 # Best solution I have found for running locally is to comment out the following lines 
@@ -78,7 +79,7 @@ CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_METHODS = ['DELETE', 'GET', 'OPTIONS', 'PATCH', 'POST', 'PUT']
 CORS_ALLOW_HEADERS = ['Content-Type', 'X-CSRFToken']
 CORS_ORIGIN_WHITELIST = [
-    "https://lc-frontend-d59c14215cd2.herokuapp.com/",
+    os.environ.get('API_URL'),
 ]
 CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOWED_ORIGINS = [
