@@ -77,6 +77,9 @@ SECURE_SSL_REDIRECT = True
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_METHODS = ['DELETE', 'GET', 'OPTIONS', 'PATCH', 'POST', 'PUT']
 CORS_ALLOW_HEADERS = ['Content-Type', 'X-CSRFToken']
+CORS_ORIGIN_WHITELIST = [
+    "https://lc-frontend-d59c14215cd2.herokuapp.com/",
+]
 CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOWED_ORIGINS = [
     os.environ.get('API_URL'),
