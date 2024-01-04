@@ -59,6 +59,7 @@ MIDDLEWARE = [
 
 STATIC_URL = '/static/'
 
+ALLOWED_HOSTS = ['https://lc-backend-django-2e9aca49847c.herokuapp.com/', 'localhost']
 CSRF_TRUSTED_ORIGINS = [
     os.environ.get('API_URL'),
 ]
